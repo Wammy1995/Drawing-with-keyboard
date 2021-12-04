@@ -3,27 +3,27 @@ console.log(teclas);
 var cuadrito =document.getElementById("garabato");
 var papel = cuadrito.getContext("2d");
 document.addEventListener("keydown",dibujarTeclado);
-document.addEventListener("click",tecladito);
+// document.addEventListener("click",tecladito);
 var teclas =
 {
    UP:38,
    DOWN:40,
-   LEFT:37,
-   RIGHT:39
+   LEFT:65,
+   RIGHT:68
 };
 
 var color = "red"
 var y=150
 var x= 150
 var movimiento = 10
-function tecladito()
-{
-   if (click==true){
-      dibujarLinea("color",x,y,x+10,y+10,papel);
-      x=x+10;
-      y=y+10;
-   }
-}
+// function tecladito(evento)
+// {
+//    if (evento.click==true){
+//       dibujarLinea("color",x,y,x+10,y+10,papel);
+//       x=x+10;
+//       y=y+10;
+//    }
+// }
 function dibujarTeclado(evento)
 {
    switch(evento.keyCode)
