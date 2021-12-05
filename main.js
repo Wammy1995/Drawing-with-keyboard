@@ -16,6 +16,8 @@ var teclas =
 var color = "red"
 var y=150
 var x= 150
+var newy = 150
+var newx = 150
 var m_left = false;   
 var m_right = false;
 var m_down = false;
@@ -48,7 +50,7 @@ function dibujarTeclado(evento)
    
 }
 
-function shousong(evento)
+function songshou(evento)
 {
    switch(evento.keyCode)
    {
@@ -82,21 +84,20 @@ function dibujarLinea(color,x_inicial,y_inicial,x_final,y_final,lienzo)
     }
 
 setInterval(function(){   
-    if(a_left){
-      dibujarLinea("color",x,y,x,y-5,papel);
-      y=y-5;
+    if(m_down){
+      newy+=5;
     }
-    if(a_right){
-      dibujarLinea("color",x,y,x,y+5,papel);
-      y=y+5;
+    if(m_up){
+      newy-=5;
     }
-    if(b_left){
-      dibujarLinea("color",x,y,x-5,y,papel);
-      x=x-5;
+    if(m_left){
+      newx-=5;
     }
-    if(b_right){
-      dibujarLinea("color",x,y,x+5,y,papel);
-      x=x+5;
+    if(m_right){
+      newx+=5;
     }
-},5)
+    dibujarLinea("color",x,y,newx,newy,papel);
+    x=newx;
+    y=newy;
+},50)
 
