@@ -101,3 +101,4 @@ setInterval(function(){
     y=newy;
 },50)
 
+// papel.fill() 最后闭合图形
