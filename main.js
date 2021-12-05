@@ -15,7 +15,6 @@ var teclas =
 var color = "red"
 var y=150
 var x= 150
-var movimiento = 10
 // function tecladito(evento)
 // {
 //    if (evento.click==true){
@@ -29,20 +28,24 @@ function dibujarTeclado(evento)
    switch(evento.keyCode)
    {
       case teclas.UP:
-         dibujarLinea("color",x,y,x,y-movimiento,papel);
-         y=y-movimiento;
+         dibujarLinea("color",x,y,x,y-3,papel);
+         y=y-3;
       break
       case teclas.DOWN:
-         dibujarLinea("color",x,y,x,y+movimiento,papel);
-         y=y+movimiento;
+         dibujarLinea("color",x,y,x,y+3,papel);
+         y=y+3;
       break
       case teclas.LEFT:
-         dibujarLinea("color",x,y,x-movimiento,y,papel);
-         x=x-movimiento;
+         dibujarLinea("color",x,y,x-4,y,papel);
+         x=x-4;
       break
       case teclas.RIGHT:
-         dibujarLinea("color",x,y,x+movimiento,y,papel);
-         x=x+movimiento;
+         dibujarLinea("color",x,y,x+4,y,papel);
+         x=x+4;
+      break
+      case teclas.RIGHT:
+         dibujarLinea("color",x,y,x+4,y,papel);
+         x=x+4;
       break
    }
    
