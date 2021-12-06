@@ -10,11 +10,11 @@ var canvas = document.getElementById("test");
     }   
     cxt.closePath();   
     //设置边框样式以及填充颜色   
-    cxt.lineWidth="3";   
-    cxt.fillStyle = "#F6F152";   
-    cxt.strokeStyle = "#F5270B";   
-    cxt.fill();   
-    cxt.stroke();   
+    cxt.lineWidth="3";
+    cxt.fillStyle = "#F6F152";
+    cxt.strokeStyle = "#F5270B"; 
+    cxt.fill();
+    cxt.stroke();
 // 以上是五角星
 
 
@@ -33,9 +33,13 @@ var teclas =
    RIGHT:68
 };
 
-var color = "red"
-var y = 100
-var x = 100
+var color = "black"
+// var y = 100
+// var x = 100
+var y = -Math.sin(18/180*Math.PI)*200+200
+var x = Math.cos(18/180*Math.PI)*200+200
+var xspeed = 6
+var yspeed = 6
 var newy = 100
 var newx = 100
 var m_left = false;   
@@ -91,12 +95,15 @@ function songshou(evento)
 }
 
 
-dibujarLinea(color,149,149,151,151,papel)
+// dibujarLinea('red',99,99,100,99,papel)
+dibujarLinea('red',Math.cos(18/180*Math.PI)*200+200,-Math.sin(18/180*Math.PI)*200+200,
+   Math.cos(18/180*Math.PI)*200+200,-Math.sin(18/180*Math.PI)*200+200,papel)
 
 function dibujarLinea(color,x_inicial,y_inicial,x_final,y_final,lienzo)
     {
         lienzo.beginPath();
         lienzo.strokeStyle = color;
+        lienzo.lineWidth="3";
         lienzo.moveTo(x_inicial,y_inicial);
         lienzo.lineTo(x_final,y_final);
         lienzo.stroke();
@@ -105,16 +112,16 @@ function dibujarLinea(color,x_inicial,y_inicial,x_final,y_final,lienzo)
 
 setInterval(function(){   
     if(m_down){
-      newy+=5;
+      newy+=yspeed;
     }
     if(m_up){
-      newy-=5;
+      newy-=yspeed;
     }
     if(m_left){
-      newx-=5;
+      newx-=xspeed;
     }
     if(m_right){
-      newx+=5;
+      newx+=xspeed;
     }
     dibujarLinea("color",x,y,newx,newy,papel);
     x=newx;
