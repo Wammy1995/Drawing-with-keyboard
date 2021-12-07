@@ -121,7 +121,7 @@ function dibujarLinea(color,x_inicial,y_inicial,x_final,y_final,lienzo)
         lienzo.moveTo(x_inicial,y_inicial);
         lienzo.lineTo(x_final,y_final);
         lienzo.stroke();
-        lienzo.fill();
+        
     }
 
 function done(){
