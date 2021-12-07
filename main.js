@@ -27,7 +27,7 @@ var canvas = document.getElementById("test2");
     cxt.lineTo(60,70);
     cxt.closePath();   
     //设置边框样式以及填充颜色   
-    cxt.lineWidth="3";
+    cxt.lineWidth="4";
     cxt.fillStyle = "#F6F152";
     cxt.strokeStyle = "#F5270B"; 
     cxt.fill();
@@ -114,7 +114,7 @@ function dibujarLinea(color,x_inicial,y_inicial,x_final,y_final,lienzo)
     {
         lienzo.beginPath();
         lienzo.strokeStyle = color;
-        lienzo.lineWidth="3";
+        lienzo.lineWidth="4";
         lienzo.moveTo(x_inicial,y_inicial);
         lienzo.lineTo(x_final,y_final);
         lienzo.stroke();
