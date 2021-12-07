@@ -17,8 +17,8 @@
 //     cxt.stroke();
 // 以上是五角星
 
-var canvas = document.getElementById("test2");   
-    var cxt = canvas.getContext("2d");   
+var cas = document.getElementById("test2");   
+    var cxt = cas.getContext("2d");   
     cxt.beginPath();   
     //设置是个顶点的坐标，根据顶点制定路径   
     cxt.lineTo(30,30);
@@ -32,13 +32,15 @@ var canvas = document.getElementById("test2");
     cxt.strokeStyle = "#F5270B"; 
     cxt.fill();
     cxt.stroke();
-// 以上是五角星
 
+// // 以上是平行四边形  
 
 var cuadrito =document.getElementById("garabato");
 var papel = cuadrito.getContext("2d");
 document.addEventListener("keydown",dibujarTeclado);
 document.addEventListener("keyup",songshou);
+papel.beginPath();
+
 // document.addEventListener("click",tecladito);
 var teclas =
 {
@@ -51,8 +53,8 @@ var teclas =
 var color = "black"
 var y = 30
 var x = 32
-var xspeed = 1
-var yspeed = 1
+var xspeed = 20
+var yspeed = 20
 var newy = y
 var newx = x
 var m_left = false;   
@@ -112,28 +114,29 @@ dibujarLinea('blue',30,30,32,30,papel)
 
 function dibujarLinea(color,x_inicial,y_inicial,x_final,y_final,lienzo)
     {
-        lienzo.beginPath();
         lienzo.strokeStyle = color;
+        lienzo.fillStyle = "green";
         lienzo.lineWidth="4";
         lienzo.moveTo(x_inicial,y_inicial);
         lienzo.lineTo(x_final,y_final);
         lienzo.stroke();
-        lienzo.closePath();
+        lienzo.fill();
     }
 
 function done(){
-   papel.beginPath();
-   papel.strokeStyle = blue;
+   papel.strokeStyle = 'blue';
    papel.lineWidth="4";
-   papel.moveTo(30,30);
-   papel.fillStyle = "green"; 
-   papel.fill();
-   papel.lineTo(x,y);
+   papel.moveTo(x,y);
+   papel.lineTo(30,30);
    papel.stroke();
+   papel.fill();
    papel.closePath();
+   // papel.globalCompositeOperation="destination-out";
+   clearInterval(ick)
+   // papel.drawImage(cas,0,0)
 }
 
-setInterval(function(){
+var ick = setInterval(function(){
     if(m_down){
       newy+=yspeed;
     }
