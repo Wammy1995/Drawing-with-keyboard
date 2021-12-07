@@ -24,8 +24,8 @@ var cas = document.getElementById("test2");
     //设置是个顶点的坐标，根据顶点制定路径   
     cxt.lineTo(30,30);
     cxt.lineTo(330,30);
-    cxt.lineTo(160,170);
-    cxt.lineTo(460,170);
+    cxt.lineTo(430,230);
+    cxt.lineTo(130,230);
     cxt.closePath();   
     //设置边框样式以及填充颜色   
     cxt.lineWidth="4";
