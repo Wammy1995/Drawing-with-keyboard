@@ -1,3 +1,4 @@
+
 // var canvas = document.getElementById("test1");   
 //     var cxt = canvas.getContext("2d");   
 //     cxt.beginPath();   
@@ -149,7 +150,7 @@ var ick = setInterval(function(){
     if(m_right){
       newx+=xspeed;
     }
-    dibujarLinea("color",x,y,newx,newy,papel);
+    dibujarLinea(color,x,y,newx,newy,papel);
     x=newx;
     y=newy;
 },50)
