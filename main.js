@@ -121,6 +121,18 @@ function dibujarLinea(color,x_inicial,y_inicial,x_final,y_final,lienzo)
         lienzo.closePath();
     }
 
+function done(){
+   papel.beginPath();
+   papel.strokeStyle = blue;
+   papel.lineWidth="4";
+   papel.moveTo(30,30);
+   papel.fillStyle = "green"; 
+   papel.fill();
+   papel.lineTo(x,y);
+   papel.stroke();
+   papel.closePath();
+}
+
 setInterval(function(){
     if(m_down){
       newy+=yspeed;
