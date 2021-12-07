@@ -29,7 +29,7 @@ var cas = document.getElementById("test2");
     cxt.closePath();   
     //设置边框样式以及填充颜色   
     cxt.lineWidth="4";
-    cxt.fillStyle = "#F6F152";
+    cxt.fillStyle = "rgba(192, 80, 77, 0.7)";
     cxt.strokeStyle = "#F5270B"; 
     cxt.fill();
     cxt.stroke();
