@@ -156,4 +156,4 @@ var ick = setInterval(function(){
 },50)
 
 // papel.fill() 最后闭合图形
-// papel.getImageData(0,0,400,400).data 获取数据点信息 4x-1
+// papel.getImageData(0,0,400,400).data 获取数据点信息 4x-1 lighter重合部分颜色相加
