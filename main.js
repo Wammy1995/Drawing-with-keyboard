@@ -18,22 +18,37 @@
 //     cxt.stroke();
 // 以上是五角星
 
-var cas = document.getElementById("test2");   
-    var cxt = cas.getContext("2d");   
-    cxt.beginPath();   
-    //设置是个顶点的坐标，根据顶点制定路径   
-    cxt.lineTo(30,30);
-    cxt.lineTo(330,30);
-    cxt.lineTo(430,230);
-    cxt.lineTo(130,230);
-    cxt.closePath();   
-    //设置边框样式以及填充颜色   
-    cxt.lineWidth="4";
-    cxt.fillStyle = "rgba(192, 80, 77, 0.7)";
-    cxt.strokeStyle = "#F5270B"; 
-    cxt.fill();
-    cxt.stroke();
+var cas2 = document.getElementById("test2");   
+var cxt2 = cas2.getContext("2d");   
+cxt2.beginPath();   
+//设置是个顶点的坐标，根据顶点制定路径   
+cxt2.lineTo(30,30);
+cxt2.lineTo(330,30);
+cxt2.lineTo(430,230);
+cxt2.lineTo(130,230);
+cxt2.closePath();   
+//设置边框样式以及填充颜色   
+cxt2.lineWidth="4";
+cxt2.fillStyle = "aliceblue";
+cxt2.strokeStyle = "#F5270B"; 
+cxt2.fill();
+cxt2.stroke();
 
+var cas1 = document.getElementById("test1");   
+var cxt1 = cas1.getContext("2d"); 
+cxt1.beginPath();   
+//设置是个顶点的坐标，根据顶点制定路径   
+cxt1.lineTo(30,30);
+cxt1.lineTo(330,30);
+cxt1.lineTo(430,230);
+cxt1.lineTo(130,230);
+cxt1.closePath();   
+//设置边框样式以及填充颜色   
+cxt1.lineWidth="4";
+cxt1.fillStyle = "aliceblue";
+cxt1.strokeStyle = "#F5270B"; 
+cxt1.fill();
+cxt1.stroke();
 // // 以上是平行四边形  
 
 var cuadrito =document.getElementById("garabato");
@@ -43,6 +58,7 @@ document.addEventListener("keyup",songshou);
 papel.beginPath();
 var zhenzhen =document.getElementById("zhen").getContext("2d");
 zhenzhen.beginPath();
+zhenzhen.lineTo(30,30)
 // document.addEventListener("click",tecladito);
 var teclas =
 {
@@ -113,12 +129,12 @@ function songshou(evento)
 
 
 dibujarLinea('blue',30,30,32,30,papel)
-xujia(30,30,zhenzhen)
+xujia(32,30,zhenzhen)
 function xujia(x,y,lienzo)
     {
-        lienzo.strokeStyle = 'white';
-        lienzo.lineWidth="4";
-        lienzo.lineTo(x,y);
+      lienzo.strokeStyle = "blue";
+      lienzo.lineWidth="4";
+      lienzo.lineTo(x,y);
     }
 
 function dibujarLinea(color,x_inicial,y_inicial,x_final,y_final,lienzo)
@@ -136,12 +152,33 @@ function done(){
    papel.moveTo(x,y);
    papel.lineTo(30,30);
    papel.stroke();
-   zhenzhen.fillStyle='green';
+   zhenzhen.fillStyle='black';
+   zhenzhen.stroke();
    zhenzhen.fill();
    papel.closePath();
-   // papel.globalCompositeOperation="destination-out";
+   zhenzhen.globalCompositeOperation="source-out";
+   cxt2.globalCompositeOperation='source-out';
    clearInterval(ick)
-   // papel.drawImage(cas,0,0)
+   cxt2.drawImage(document.getElementById("zhen"),0,0)
+   zhenzhen.drawImage(cas1,0,0)
+}
+
+function jisuan() {
+   var shuzhi = 0;
+   var todo1 = zhenzhen.getImageData(0,0,400,400).data;
+   var todo2 = cxt2.getImageData(0,0,400,400).data;
+   for (var i = 1; i < 160001; i++) {
+         if(todo1[4*i-1]>0.7){
+            shuzhi += 1
+         }
+   }
+   for (var j = 1; j < 160001; j++) {
+         if(todo2[4*j-1]>0.7){
+            shuzhi += 1
+         }
+   }
+
+   console.log(shuzhi)
 }
 
 var ick = setInterval(function(){
@@ -158,7 +195,7 @@ var ick = setInterval(function(){
       newx+=xspeed;
     }
     dibujarLinea(color,x,y,newx,newy,papel);
-    xujia(newx,newy)
+    xujia(newx,newy,zhenzhen)
     x=newx;
     y=newy;
 },50)
