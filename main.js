@@ -41,7 +41,8 @@ var papel = cuadrito.getContext("2d");
 document.addEventListener("keydown",dibujarTeclado);
 document.addEventListener("keyup",songshou);
 papel.beginPath();
-
+var zhenzhen =document.getElementById("zhen").getContext("2d");
+zhenzhen.beginPath();
 // document.addEventListener("click",tecladito);
 var teclas =
 {
@@ -112,16 +113,21 @@ function songshou(evento)
 
 
 dibujarLinea('blue',30,30,32,30,papel)
+xujia(30,30,zhenzhen)
+function xujia(x,y,lienzo)
+    {
+        lienzo.strokeStyle = 'white';
+        lienzo.lineWidth="4";
+        lienzo.lineTo(x,y);
+    }
 
 function dibujarLinea(color,x_inicial,y_inicial,x_final,y_final,lienzo)
     {
         lienzo.strokeStyle = color;
-        lienzo.fillStyle = "green";
         lienzo.lineWidth="4";
         lienzo.moveTo(x_inicial,y_inicial);
         lienzo.lineTo(x_final,y_final);
         lienzo.stroke();
-        
     }
 
 function done(){
@@ -130,7 +136,8 @@ function done(){
    papel.moveTo(x,y);
    papel.lineTo(30,30);
    papel.stroke();
-   papel.fill();
+   zhenzhen.fillStyle='green';
+   zhenzhen.fill();
    papel.closePath();
    // papel.globalCompositeOperation="destination-out";
    clearInterval(ick)
@@ -151,6 +158,7 @@ var ick = setInterval(function(){
       newx+=xspeed;
     }
     dibujarLinea(color,x,y,newx,newy,papel);
+    xujia(newx,newy)
     x=newx;
     y=newy;
 },50)
