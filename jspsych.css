@@ -1,0 +1,118 @@
+body {
+    user-select: none;
+    /* none|auto|text|contain|all; 禁止选中文本（防止复制） */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    -moz-user-select: none;
+    /* Firefox */
+    -webkit-user-select: none;
+    /* Chrome/Safari/Opera */
+}
+
+#jspsych-survey-multi-select-form {
+    width: 80%;
+    margin: auto;
+}
+
+option{
+    cursor: pointer;
+}
+#preq{
+    margin-left: -280px;
+    position: absolute;
+}
+
+#nextq{
+    margin-left: 280px;
+    position: absolute;
+}
+
+.hidden {
+    display: none;
+}
+
+.jspsych-survey-text {
+    text-align: left;
+    margin-left: 20px;
+}
+
+
+#jspsych-html-button-response-stimulus p {
+    text-align: left;
+    font-weight: unset;
+    text-indent: 2em;
+}
+
+.jspsych-survey-text-question textarea {
+    font-size: 20px;
+    width: 95%;
+    margin-left: 20px;
+}
+
+.jspsych-btn {
+    font-size: 16pt;
+    font-family: 微软雅黑;
+    font-weight: normal;
+    margin: 1em 0em;
+}
+
+.tag-left {
+    font-size: 24pt;
+    position: absolute;
+    top: 15%;
+    left: 20%;
+}
+
+.tag-right {
+    font-size: 24pt;
+    position: absolute;
+    top: 15%;
+    right: 20%;
+}
+
+/*新增的东西*/
+.aap{
+    position: absolute;
+    font-size: 33px;
+    line-height: 28px;
+}
+
+.aright{
+    right: 30px;
+}
+.aleft{
+    left: 30px;
+}
+.atop{
+    top: 30px;
+}
+.abottom{
+    bottom: 30px;
+}
+.acr{  
+    width: 0.27cm;
+    height: 0.27cm;
+    background: #ffffff;
+    border-radius: 50%;
+    border: 3px solid #000000;
+}
+.aapcr{
+    color: rgb(200, 0, 0);
+}
+.aapcb{
+    color: rgb(0, 200, 200);
+}
+.aapcy{
+    color: rgb(200, 200, 0);
+}
+.aapcz{
+    color: rgb(190, 45, 200);
+}
+.spr{
+    width: 80px;
+    height: 30px;
+    display: inline-block;
+    margin-right: 22px;
+}
+
+
