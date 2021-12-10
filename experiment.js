@@ -72,14 +72,20 @@ var open_fullscreen = {
 
 var ins_smw = {
     type:jsPsychInstructions,
-
+    pages:['这是画画'],
+    button_label_next:'开始',
+    show_clickable_nav:true,
+    allow_backward:false,
     }
 
 
 var first_pic = {
       type: jsPsychHtmlButtonResponse,
-      stimulus: '<canvas width="500" height="500" id="garabato" style="position: absolute;"></canvas><canvas width="500" height="500" id="zhen" style="position: absolute;visibility: hidden;"></canvas><canvas width="500" height="500" id="test1"></canvas><canvas width="500" height="500" id="test2" style="position: absolute;visibility: hidden;"></canvas><script src="main.js"></script>',
-      data: {task: 'first_pic'}
+      stimulus: function(){
+        return '<canvas width="500" height="500" id="garabato" style="position: absolute;"></canvas><canvas width="500" height="500" id="zhen" style="position: absolute;visibility: hidden;"></canvas><canvas width="500" height="500" id="test1"></canvas><canvas width="500" height="500" id="test2" style="position: absolute;visibility: hidden;"></canvas><script src="main.js"></script>'},
+      data: {task: 'first_pic'},
+      choices:['完成'],
+      button_html:'<button class="jspsych-btn" onclick="done()">%choice%</button>'
 
     };
 
