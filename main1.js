@@ -187,7 +187,7 @@ function jisuan() {
             shuzhi += 1
          }
    }
-   for (var j = 1; j < 160001; j++) {
+   for (var j = 1; j < 250001; j++) {
          if(todo2[4*j-1]>0.7){
             shuzhi += 1
          }
@@ -215,7 +215,6 @@ var ick = setInterval(function(){
     xujia(newx,newy,zhenzhen)
     x=newx;
     y=newy;
-    console.log(111)
 },50)
 
 // papel.fill() 最后闭合图形
