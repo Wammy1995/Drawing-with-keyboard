@@ -210,6 +210,7 @@ var ick = setInterval(function(){
     xujia(newx,newy,zhenzhen)
     x=newx;
     y=newy;
+    console.log(111)
 },50)
 
 // papel.fill() 最后闭合图形
