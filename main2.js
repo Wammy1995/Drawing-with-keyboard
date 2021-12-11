@@ -7,12 +7,12 @@ cxt2.lineTo(495,250);
 cxt2.lineTo(320,320);
 cxt2.lineTo(250,495);
 cxt2.lineTo(180,320);
-cxt2.lineTo(0,250);
+cxt2.lineTo(5,250);
 cxt2.lineTo(180,180);
 cxt2.closePath();   
 cxt2.lineWidth="4";
 cxt2.fillStyle = "aliceblue";
-cxt2.strokeStyle = "#F5270B"; 
+cxt2.strokeStyle = "red"; 
 cxt2.fill();
 cxt2.stroke();
 // 只是工具画板
@@ -21,14 +21,15 @@ var cas1 = document.getElementById("test1");
 var cxt1 = cas1.getContext("2d"); 
 cxt1.beginPath();   
 //设置是个顶点的坐标，根据顶点制定路径   
-cxt2.lineTo(250,5);
-cxt2.lineTo(320,180);
-cxt2.lineTo(495,250);
-cxt2.lineTo(320,320);
-cxt2.lineTo(250,495);
-cxt2.lineTo(180,320);
-cxt2.lineTo(0,250);
-cxt2.lineTo(180,180);cxt1.closePath();   
+cxt1.lineTo(250,5);
+cxt1.lineTo(320,180);
+cxt1.lineTo(495,250);
+cxt1.lineTo(320,320);
+cxt1.lineTo(250,495);
+cxt1.lineTo(180,320);
+cxt1.lineTo(5,250);
+cxt1.lineTo(180,180);
+cxt1.closePath();   
 //设置边框样式以及填充颜色   
 cxt1.lineWidth="4";
 cxt1.fillStyle = "aliceblue";
@@ -63,7 +64,7 @@ cxt2.lineTo(495,250);
 cxt2.lineTo(320,320);
 cxt2.lineTo(250,495);
 cxt2.lineTo(180,320);
-cxt2.lineTo(0,250);
+cxt2.lineTo(5,250);
 cxt2.lineTo(180,180);cxt1.closePath();   
 //设置边框样式以及填充颜色   
 cxt1.lineWidth="4";
@@ -220,7 +221,6 @@ var ick = setInterval(function(){
     xujia(newx,newy,zhenzhen)
     x=newx;
     y=newy;
-    console.log(111)
 },50)
 
 // papel.fill() 最后闭合图形
