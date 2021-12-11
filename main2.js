@@ -1,10 +1,14 @@
 var cas2 = document.getElementById("test2");   
 var cxt2 = cas2.getContext("2d");   
 cxt2.beginPath();   
-cxt2.lineTo(30,30);
-cxt2.lineTo(330,30);
-cxt2.lineTo(430,230);
-cxt2.lineTo(130,230);
+cxt2.lineTo(250,5);
+cxt2.lineTo(320,180);
+cxt2.lineTo(495,250);
+cxt2.lineTo(320,320);
+cxt2.lineTo(250,495);
+cxt2.lineTo(180,320);
+cxt2.lineTo(0,250);
+cxt2.lineTo(180,180);
 cxt2.closePath();   
 cxt2.lineWidth="4";
 cxt2.fillStyle = "aliceblue";
@@ -17,11 +21,14 @@ var cas1 = document.getElementById("test1");
 var cxt1 = cas1.getContext("2d"); 
 cxt1.beginPath();   
 //设置是个顶点的坐标，根据顶点制定路径   
-cxt1.lineTo(30,30);
-cxt1.lineTo(330,30);
-cxt1.lineTo(430,230);
-cxt1.lineTo(130,230);
-cxt1.closePath();   
+cxt2.lineTo(250,5);
+cxt2.lineTo(320,180);
+cxt2.lineTo(495,250);
+cxt2.lineTo(320,320);
+cxt2.lineTo(250,495);
+cxt2.lineTo(180,320);
+cxt2.lineTo(0,250);
+cxt2.lineTo(180,180);cxt1.closePath();   
 //设置边框样式以及填充颜色   
 cxt1.lineWidth="4";
 cxt1.fillStyle = "aliceblue";
@@ -50,11 +57,14 @@ var cas1 = document.getElementById("test1");
 var cxt1 = cas1.getContext("2d"); 
 cxt1.beginPath();   
 //设置是个顶点的坐标，根据顶点制定路径   
-cxt1.lineTo(30,30);
-cxt1.lineTo(330,30);
-cxt1.lineTo(430,230);
-cxt1.lineTo(130,230);
-cxt1.closePath();   
+cxt2.lineTo(250,5);
+cxt2.lineTo(320,180);
+cxt2.lineTo(495,250);
+cxt2.lineTo(320,320);
+cxt2.lineTo(250,495);
+cxt2.lineTo(180,320);
+cxt2.lineTo(0,250);
+cxt2.lineTo(180,180);cxt1.closePath();   
 //设置边框样式以及填充颜色   
 cxt1.lineWidth="4";
 cxt1.fillStyle = "aliceblue";
@@ -70,7 +80,7 @@ document.addEventListener("keyup",songshou);
 papel.beginPath();
 var zhenzhen =document.getElementById("zhen").getContext("2d");
 zhenzhen.beginPath();
-zhenzhen.lineTo(30,30)
+zhenzhen.lineTo(250,5)
 // document.addEventListener("click",tecladito);
 var teclas =
 {
@@ -81,8 +91,8 @@ var teclas =
 };
 
 var color = "black"
-var y = 28
-var x = 30
+var y = 3
+var x = 250
 var xspeed = 5
 var yspeed = 5
 var newy = y
@@ -140,8 +150,8 @@ function songshou(evento)
 }
 
 
-dibujarLinea('blue',30,30,30,28,papel)
-xujia(30,28,zhenzhen)
+dibujarLinea('blue',250,5,250,3,papel)
+xujia(250,3,zhenzhen)
 function xujia(x,y,lienzo)
     {
       lienzo.strokeStyle = "blue";
@@ -162,7 +172,7 @@ function done(){
    papel.strokeStyle = 'blue';
    papel.lineWidth="4";
    papel.moveTo(x,y);
-   papel.lineTo(30,28);
+   papel.lineTo(250,3);
    papel.stroke();
    zhenzhen.fillStyle='black';
    zhenzhen.stroke();
@@ -179,12 +189,12 @@ function jisuan() {
    var shuzhi = 0;
    var todo1 = zhenzhen.getImageData(0,0,500,500).data;
    var todo2 = cxt2.getImageData(0,0,500,500).data;
-   for (var i = 1; i < 250001; i++) {
+   for (var i = 1; i < 160001; i++) {
          if(todo1[4*i-1]>0.7){
             shuzhi += 1
          }
    }
-   for (var j = 1; j < 160001; j++) {
+   for (var j = 1; j < 250001; j++) {
          if(todo2[4*j-1]>0.7){
             shuzhi += 1
          }
