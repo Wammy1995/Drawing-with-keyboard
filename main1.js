@@ -91,6 +91,7 @@ var m_left = false;
 var m_right = false;
 var m_down = false;
 var m_up = false;
+var tac = false;
 // function tecladito(evento)
 // {
 //    if (evento.click==true){
@@ -115,8 +116,8 @@ function dibujarTeclado(evento)
       case teclas.RIGHT:
          m_right = true;
       break
-   }
-   
+   };
+   tac = true;
 }
 
 function songshou(evento)
@@ -173,6 +174,8 @@ function done(){
    clearInterval(ick)
    cxt2.drawImage(document.getElementById("zhen"),0,0)
    zhenzhen.drawImage(cas1,0,0)
+   console.log('差异面积为'+jisuan())
+   console.log('用时'+jishi+'ms')
 }
 
 function jisuan() {
@@ -189,9 +192,8 @@ function jisuan() {
             shuzhi += 1
          }
    }
-
-   console.log(shuzhi)
-}
+      return shuzhi
+   }
 
 var ick = setInterval(function(){
     if(m_down){
@@ -205,6 +207,9 @@ var ick = setInterval(function(){
     }
     if(m_right){
       newx+=xspeed;
+    }
+    if (tac) {
+      jishi += 50
     }
     dibujarLinea(color,x,y,newx,newy,papel);
     xujia(newx,newy,zhenzhen)
