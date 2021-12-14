@@ -205,6 +205,8 @@ var ick = setInterval(function(){
     var ds = Math.sqrt(Math.pow((newx-x_in),2)+Math.pow((newy-y_in),2))
     if (ds<4){
       tts = false; 
+    }else{
+      tts = true;
     }
     if (tac && tts) {
       jishi += 50
