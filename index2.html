@@ -6,13 +6,26 @@
     <title>第二话</title>
 </head>
 <body>
+    <div style="width: 600px;height: 600px;text-align: center;">
     <p>画图</p>
-    <canvas width="500" height="500" id="garabato" style="position: absolute;border: 2px solid rgb(3, 17, 29);"></canvas>
-    <canvas width="500" height="500" id="zhen" style="position: absolute;visibility: hidden;"></canvas>
-    <canvas width="500" height="500" id="test1"></canvas>
-    <canvas width="500" height="500" id="test2" style="position: absolute;visibility: hidden;"></canvas>
-
-    <button onclick="done()">when finished,click here!</button>
+    <div style="position: fixed;margin-left: 50px;">
+        <canvas width="500" height="500" id="test1"></canvas>
+    </div>
+    <div style="position: fixed;margin-left: 50px;">
+        <canvas width="500" height="500" id="zhen" style="visibility: hidden;"></canvas>
+    </div>
+    <div style="position: fixed;margin-left: 50px;">
+        <canvas width="500" height="500" id="garabato" style="border: 2px solid rgb(3, 17, 29);"></canvas>
+    </div>
+    <div style="position: fixed;margin-left: 50px;">
+    <canvas width="500" height="500" id="test2" style="visibility: hidden;"></canvas>
+    </div>
+    <div>
+        <a href="index2.html" target="_blank" onclick="done()">
+        <button>when finished,click here!</button>
+        </a>
+    </div>
+</div>
     <script src="main2.js"></script>
 </body>
 </html>
