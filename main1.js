@@ -83,6 +83,8 @@ var teclas =
 var color = "black"
 var y = 28
 var x = 30
+var x_in = x
+var y_in = y
 var xspeed = 5
 var yspeed = 5
 var newy = y
@@ -141,8 +143,8 @@ function songshou(evento)
 }
 
 
-dibujarLinea('blue',30,30,30,28,papel)
-xujia(30,28,zhenzhen)
+dibujarLinea('blue',30,30,x_in,y_in,papel)
+xujia(x_in,y_in,zhenzhen)
 function xujia(x,y,lienzo)
     {
       lienzo.strokeStyle = "blue";
@@ -163,7 +165,7 @@ function done(){
    papel.strokeStyle = 'blue';
    papel.lineWidth="4";
    papel.moveTo(x,y);
-   papel.lineTo(30,28);
+   papel.lineTo(x_in,y_in);
    papel.stroke();
    zhenzhen.fillStyle='black';
    zhenzhen.stroke();
@@ -208,7 +210,8 @@ var ick = setInterval(function(){
     if(m_right){
       newx+=xspeed;
     }
-    if (tac) {
+    var ds = Math.sqrt(Math.pow((newx-x_in),2)+Math.pow((newy-y_in),2))
+    if (tac && ds>4) {
       jishi += 50
     }
     dibujarLinea(color,x,y,newx,newy,papel);
