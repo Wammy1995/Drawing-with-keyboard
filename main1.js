@@ -94,6 +94,8 @@ var m_right = false;
 var m_down = false;
 var m_up = false;
 var tac = false;
+var tts = true;
+
 // function tecladito(evento)
 // {
 //    if (evento.click==true){
@@ -211,7 +213,10 @@ var ick = setInterval(function(){
       newx+=xspeed;
     }
     var ds = Math.sqrt(Math.pow((newx-x_in),2)+Math.pow((newy-y_in),2))
-    if (tac && ds>4) {
+    if (ds<4){
+      tts = false; 
+    }
+    if (tac && tts) {
       jishi += 50
     }
     dibujarLinea(color,x,y,newx,newy,papel);

@@ -203,10 +203,12 @@ var ick = setInterval(function(){
       newx+=xspeed;
     }
     var ds = Math.sqrt(Math.pow((newx-x_in),2)+Math.pow((newy-y_in),2))
-    if (tac && ds>4) {
-      jishi += 50
+    if (ds<4){
+      tts = false; 
     }
-    dibujarLinea(color,x,y,newx,newy,papel);
+    if (tac && tts) {
+      jishi += 50
+    }    dibujarLinea(color,x,y,newx,newy,papel);
     xujia(newx,newy,zhenzhen)
     x=newx;
     y=newy;
