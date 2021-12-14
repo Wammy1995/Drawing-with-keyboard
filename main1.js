@@ -85,8 +85,9 @@ var y = 28
 var x = 30
 var x_in = x
 var y_in = y
-var xspeed = 5
-var yspeed = 5
+var xspeed = 5 //横向移动速度
+var yspeed = 5 //纵向移动速度
+var pse = 6  //回到起点允许的误差值
 var newy = y
 var newx = x
 var m_left = false;   
@@ -213,7 +214,7 @@ var ick = setInterval(function(){
       newx+=xspeed;
     }
     var ds = Math.sqrt(Math.pow((newx-x_in),2)+Math.pow((newy-y_in),2))
-    if (ds<xspeed){
+    if (ds<pse){
       tts = false; 
     }else{
       tts = true;
