@@ -203,7 +203,7 @@ var ick = setInterval(function(){
       newx+=xspeed;
     }
     var ds = Math.sqrt(Math.pow((newx-x_in),2)+Math.pow((newy-y_in),2))
-    if (ds<=xspeed){
+    if (ds<xspeed){
       tts = false; 
     }else{
       tts = true;
