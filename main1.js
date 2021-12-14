@@ -16,7 +16,7 @@ cxt2.stroke();
 var cas1 = document.getElementById("test1");   
 var cxt1 = cas1.getContext("2d"); 
 cxt1.beginPath();   
-//设置是个顶点的坐标，根据顶点制定路径   
+//设置个顶点的坐标，根据顶点制定路径   
 cxt1.lineTo(30,30);
 cxt1.lineTo(330,30);
 cxt1.lineTo(430,230);
@@ -29,22 +29,6 @@ cxt1.strokeStyle = "#F5270B";
 cxt1.fill();
 cxt1.stroke();
 // // 以上是平行四边形  
-
-// var cas2 = document.getElementById("test2");   
-// var cxt2 = cas2.getContext("2d");
-// cxt2.fillStyle = "aliceblue";
-// cxt2.strokeStyle = "#F5270B"; 
-// cxt2.lineWidth="4";
-// cxt2.translate(250,250);
-// cxt2.fillRect(-170,-170,340,340);
-// cxt2.strokeRect(-170,-170,340,340);
-// cxt2.save();
-// cxt2.rotate(45*Math.PI/180);
-// cxt2.fillRect(-170,-170,340,340);
-// cxt2.strokeRect(-170,-170,340,340);
-// cxt2.translate(-250,-250);
-// cxt2.restore();
-// // 只是工具画板
 
 var cas1 = document.getElementById("test1");   
 var cxt1 = cas1.getContext("2d"); 
