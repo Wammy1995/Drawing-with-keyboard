@@ -79,7 +79,7 @@ var teclas =
    LEFT:65,
    RIGHT:68
 };
-
+var jishi = 0
 var color = "black"
 var y = 28
 var x = 30

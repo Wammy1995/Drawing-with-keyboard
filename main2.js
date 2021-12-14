@@ -71,7 +71,6 @@ var teclas =
    RIGHT:68
 };
 var jishi = 0
-
 var color = "black"
 var y = 8
 var x = 250
@@ -84,6 +83,8 @@ var m_right = false;
 var m_down = false;
 var m_up = false;
 var tac = false;
+var newy = y
+var newx = x
 // function tecladito(evento)
 // {
 //    if (evento.click==true){
@@ -134,8 +135,8 @@ function songshou(evento)
 }
 
 
-dibujarLinea('blue',250,10,250,8,papel)
-xujia(250,8,zhenzhen)
+dibujarLinea('blue',250,10,x_in,y_in,papel)
+xujia(x_in,y_in,zhenzhen)
 function xujia(x,y,lienzo)
     {
       lienzo.strokeStyle = "blue";
@@ -156,7 +157,7 @@ function done(){
    papel.strokeStyle = 'blue';
    papel.lineWidth="4";
    papel.moveTo(x,y);
-   papel.lineTo(250,8);
+   papel.lineTo(x_in,y_in);
    papel.stroke();
    zhenzhen.fillStyle='black';
    zhenzhen.stroke();
@@ -201,7 +202,8 @@ var ick = setInterval(function(){
     if(m_right){
       newx+=xspeed;
     }
-    if (tac) {
+    var ds = Math.sqrt(Math.pow((newx-x_in),2)+Math.pow((newy-y_in),2))
+    if (tac && ds>4) {
       jishi += 50
     }
     dibujarLinea(color,x,y,newx,newy,papel);
