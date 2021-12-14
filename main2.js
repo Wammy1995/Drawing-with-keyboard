@@ -83,8 +83,8 @@ var m_right = false;
 var m_down = false;
 var m_up = false;
 var tac = false;
-var newy = y
-var newx = x
+var x_in = x
+var y_in = y
 // function tecladito(evento)
 // {
 //    if (evento.click==true){
