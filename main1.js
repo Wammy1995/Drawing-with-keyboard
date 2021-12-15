@@ -16,23 +16,6 @@ cxt2.stroke();
 var cas1 = document.getElementById("test1");   
 var cxt1 = cas1.getContext("2d"); 
 cxt1.beginPath();   
-//设置个顶点的坐标，根据顶点制定路径   
-cxt1.lineTo(30,30);
-cxt1.lineTo(330,30);
-cxt1.lineTo(430,230);
-cxt1.lineTo(130,230);
-cxt1.closePath();   
-//设置边框样式以及填充颜色   
-cxt1.lineWidth="4";
-cxt1.fillStyle = "aliceblue";
-cxt1.strokeStyle = "#F5270B"; 
-cxt1.fill();
-cxt1.stroke();
-// // 以上是平行四边形  
-
-var cas1 = document.getElementById("test1");   
-var cxt1 = cas1.getContext("2d"); 
-cxt1.beginPath();   
 //设置是个顶点的坐标，根据顶点制定路径   
 cxt1.lineTo(30,30);
 cxt1.lineTo(330,30);
