@@ -3,10 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery.js"></script>
     <title>第二话</title>
 </head>
 <body>
-    <div style="width: 600px;height: 600px;text-align: center;margin: auto;">
+   <!--  <script>
+      $(window).on("message", function( event ){
+        // We must check event.origin, because anyone can
+        // trigger event. Unless, you are public data provider.
+        if (event.origin !== "index1.html") return;
+        alert("yes")
+        // Now let's send the (1) window data
+
+      });
+    </script>
+ -->    <div style="width: 600px;height: 600px;text-align: center;margin: auto;">
         <p>画图</p>
         <div style="position: fixed;margin-left: 50px;">
             <canvas width="500" height="500" id="test1"></canvas>

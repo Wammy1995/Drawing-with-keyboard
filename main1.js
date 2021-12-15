@@ -165,7 +165,8 @@ function done(){
    zhenzhen.drawImage(cas1,0,0)
    console.log('差异面积为'+jisuan())
    console.log('用时'+jishi+'ms')
-   window.open("index2.html")
+   // var receiver = window.open("index2.html");
+   // receiver.postMessage('pxsbx','*');
 }
 
 function jisuan() {
