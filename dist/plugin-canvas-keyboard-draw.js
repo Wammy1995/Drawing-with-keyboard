@@ -145,8 +145,8 @@ var jsPsychCanvasKeyboardDraw = (function (jspsych) {
           var chayi = 0
           var color = "black"
           var x = trial.stimulus[0]
-          var y = trial.stimulus[1]-2
-          var x_in = x
+          var y = trial.stimulus[1]
+          var x_in = x+2
           var y_in = y
           var xspeed = trial.x_speed //横向移动速度
           var yspeed = trial.y_speed //纵向移动速度
@@ -273,6 +273,7 @@ var jsPsychCanvasKeyboardDraw = (function (jspsych) {
               var ds = Math.sqrt(Math.pow((newx-x_in),2)+Math.pow((newy-y_in),2))
               if (ds<pse){
                 tts = false; 
+                // display_element.querySelector("#jspsych-html-button-response-button").style.backgroundColor="aliceblue";
               }else{
                 tts = true;
               }
