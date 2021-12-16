@@ -15,7 +15,7 @@ const btn_html_timer =
 var set_html_style = {
     type: jsPsychCallFunction,
     func: function() {
-        document.body.style.backgroundColor = 'rgb(150, 150, 150)' // background color
+        document.body.style.backgroundColor = 'white' // background color
         document.body.style.color = 'black' // font color
         document.body.style.fontSize = '20pt'
         document.body.style.fontFamily = '微软雅黑'
@@ -69,9 +69,14 @@ var open_fullscreen = {
     delay_after: 100
 }
 
-var ins_smw = {
+var task1 = {
     type:jsPsychCanvasKeyboardDraw,
     stimulus:[30,30,330,30,430,230,130,230],
+    post_trial_gap:200,
+}
+var task2 = {
+    type:jsPsychCanvasKeyboardDraw,
+    stimulus:[250,10,315,185,490,250,315,315,250,490,185,315,10,250,185,185],
     post_trial_gap:200,
 }
 
@@ -80,8 +85,8 @@ var ins_smw = {
 
 var main_timeline = [
     set_html_style,
-    // open_fullscreen,
-    ins_smw,
+    open_fullscreen,
+    task1,task2,
     
 ]
 /* Launch jsPsych */

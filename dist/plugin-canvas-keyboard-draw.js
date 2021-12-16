@@ -25,7 +25,7 @@ var jsPsychCanvasKeyboardDraw = (function (jspsych) {
           trial_duration: {
               type: jspsych.ParameterType.INT,
               pretty_name: "Trial duration",
-              default: 10000,
+              default: 5000,
           },
           /** If true, trial will end when subject makes a response. */
           response_ends_trial: {
@@ -140,7 +140,7 @@ var jsPsychCanvasKeyboardDraw = (function (jspsych) {
           var zhenzhen =document.getElementById("zhen").getContext("2d");
           zhenzhen.beginPath();
           zhenzhen.lineTo(trial.stimulus[0],trial.stimulus[1])
-          var teclas = {UP:38,DOWN:40,LEFT:65,RIGHT:68};
+          var teclas = {UP:38,DOWN:40,LEFT:37,RIGHT:39};
           var jishi = 0
           var chayi = 0
           var color = "black"
