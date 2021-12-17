@@ -73,11 +73,13 @@ var task1 = {
     type:jsPsychCanvasKeyboardDraw,
     stimulus:[30,30,330,30,430,230,130,230],
     post_trial_gap:200,
+    shifting:[2,0],
 }
 var task2 = {
     type:jsPsychCanvasKeyboardDraw,
     stimulus:[250,10,315,185,490,250,315,315,250,490,185,315,10,250,185,185],
     post_trial_gap:200,
+    
 }
 
 

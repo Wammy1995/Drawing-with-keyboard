@@ -55,7 +55,7 @@ var jsPsychCanvasKeyboardDraw = (function (jspsych) {
           shifting: {
               type: jspsych.ParameterType.INT,
               array: true,
-              pretty_name: "y speed",
+              pretty_name: "距离起始点的偏移",
               default: [0,0]
           },
 
