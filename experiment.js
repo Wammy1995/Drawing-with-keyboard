@@ -69,17 +69,35 @@ var open_fullscreen = {
     delay_after: 100
 }
 
+var ins = {
+    type: jsPsychInstructions,
+    pages: [
+    '指导语写这里。<br>br是换行'
+    ],
+    show_clickable_nav: true,
+    allow_backward:false,
+    button_label_next:"继续",
+}
+
+//以下是图形生成，按顶点顺序依次写在[]内，pse是最后的允许误差范围，同时也是起始处圆点直径。x_speed和y_speed是移动速度
+
 var task1 = {
     type:jsPsychCanvasKeyboardDraw,
     stimulus:[30,30,330,30,430,230,130,230],
     post_trial_gap:200,
-    shifting:[2,0],
+    x_speed:5,
+    y_speed:5,
+    pse:10,
 }
+
+
 var task2 = {
     type:jsPsychCanvasKeyboardDraw,
     stimulus:[250,10,315,185,490,250,315,315,250,490,185,315,10,250,185,185],
     post_trial_gap:200,
-    
+    x_speed:5,
+    y_speed:5,
+    pse:10,
 }
 
 
@@ -88,6 +106,7 @@ var task2 = {
 var main_timeline = [
     set_html_style,
     open_fullscreen,
+    ins,
     task1,task2,
     
 ]

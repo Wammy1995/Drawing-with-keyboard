@@ -52,13 +52,12 @@ var jsPsychCanvasKeyboardDraw = (function (jspsych) {
               pretty_name: "y speed",
               default: 5,
           },
-          shifting: {
+          pse: {
               type: jspsych.ParameterType.INT,
               array: true,
-              pretty_name: "距离起始点的偏移",
-              default: [0,0]
+              pretty_name: "允许偏移误差",
+              default: 10
           },
-
       },
   };
   /**
@@ -74,6 +73,7 @@ var jsPsychCanvasKeyboardDraw = (function (jspsych) {
           this.jsPsych = jsPsych;
       }
       trial(display_element, trial) {
+
           var new_html = '<div id="jspsych-canvas-stimulus" style="position: fixed;">' +
               '<canvas id="tuli" height="' +
               trial.canvas_size[0] +
@@ -88,6 +88,7 @@ var jsPsychCanvasKeyboardDraw = (function (jspsych) {
               trial.canvas_size[1] +
               '"></canvas>' +
               "</div>";
+          new_html += '<i style="width: '+trial.pse+'px;height: '+trial.pse+'px;border-radius: 50%;background-color:green;display: block;position: fixed;margin-left:'+(trial.stimulus[0]-trial.pse/2)+'px;margin-top: '+(trial.stimulus[0]-trial.pse/2)+'px;"></i>';
           new_html +=  '<div style="position: fixed;">' +
               '<canvas id="lujing" height="' +
               trial.canvas_size[0] +
@@ -104,7 +105,7 @@ var jsPsychCanvasKeyboardDraw = (function (jspsych) {
               "</div>";
 
 
-          new_html+='<button id="jspsych-html-button-response-button">完成点这里</button>'
+          new_html+='<button id="jspsych-html-button-response-button" class="jspsych-btn">完成点这里</button>'
           if (trial.prompt !== null) {
               new_html += trial.prompt;
           }
@@ -150,12 +151,12 @@ var jsPsychCanvasKeyboardDraw = (function (jspsych) {
           var chayi = 0
           var color = "black"
           var x_in = trial.stimulus[0]
-          var x_in = trial.stimulus[1]
-          var x = x+trial.shifting[0]
-          var y = y+trial.shifting[1]
+          var y_in = trial.stimulus[1]
+          var x = x_in
+          var y = y_in
           var xspeed = trial.x_speed //横向移动速度
           var yspeed = trial.y_speed //纵向移动速度
-          var pse = 6  //回到起点允许的误差值
+          var pse = trial.pse  //回到起点允许的误差值
           var newy = y
           var newx = x
           var m_left = false;   
