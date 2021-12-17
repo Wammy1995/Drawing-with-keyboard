@@ -52,7 +52,12 @@ var jsPsychCanvasKeyboardDraw = (function (jspsych) {
               pretty_name: "y speed",
               default: 5,
           },
-
+          shifting: {
+              type: jspsych.ParameterType.INT,
+              array: true,
+              pretty_name: "y speed",
+              default: [0,0]
+          },
 
       },
   };
@@ -144,10 +149,10 @@ var jsPsychCanvasKeyboardDraw = (function (jspsych) {
           var jishi = 0
           var chayi = 0
           var color = "black"
-          var x = trial.stimulus[0]
-          var y = trial.stimulus[1]
-          var x_in = x+2
-          var y_in = y
+          var x_in = trial.stimulus[0]
+          var x_in = trial.stimulus[1]
+          var x = x+trial.shifting[0]
+          var y = y+trial.shifting[1]
           var xspeed = trial.x_speed //横向移动速度
           var yspeed = trial.y_speed //纵向移动速度
           var pse = 6  //回到起点允许的误差值
@@ -197,8 +202,8 @@ var jsPsychCanvasKeyboardDraw = (function (jspsych) {
                 break
              }
           }
-          dibujarLinea('blue',x,y,x_in,y_in,papel)
-          xujia(x_in,y_in,zhenzhen)
+          dibujarLinea('blue',x_in,y_in,x,y,papel)
+          xujia(x,y,zhenzhen)
           function xujia(x,y,lienzo)
               {
                 lienzo.strokeStyle = "blue";
