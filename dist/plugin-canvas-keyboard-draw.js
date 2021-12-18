@@ -88,7 +88,7 @@ var jsPsychCanvasKeyboardDraw = (function (jspsych) {
               trial.canvas_size[1] +
               '"></canvas>' +
               "</div>";
-          new_html += '<i style="width: '+trial.pse+'px;height: '+trial.pse+'px;border-radius: 50%;background-color:green;display: block;position: fixed;margin-left:'+(trial.stimulus[0]-trial.pse/2)+'px;margin-top: '+(trial.stimulus[0]-trial.pse/2)+'px;"></i>';
+          new_html += '<i style="width: '+trial.pse+'px;height: '+trial.pse+'px;border-radius: 50%;background-color:green;display: block;position: fixed;margin-left:'+(trial.stimulus[0]-trial.pse/2)+'px;margin-top: '+(trial.stimulus[1]-trial.pse/2)+'px;"></i>';
           new_html +=  '<div style="position: fixed;">' +
               '<canvas id="lujing" height="' +
               trial.canvas_size[0] +

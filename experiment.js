@@ -1,4 +1,4 @@
-/*这是预期控制的猫鼠游戏*/
+/*这是作画*/
 
 
 /* Global Variables */
@@ -90,6 +90,14 @@ var task1 = {
     pse:10,
 }
 
+var task3 = {
+    type:jsPsychCanvasKeyboardDraw,
+    stimulus:[330,30,430,230,130,230,30,30],
+    post_trial_gap:200,
+    x_speed:5,
+    y_speed:5,
+    pse:10,
+}
 
 var task2 = {
     type:jsPsychCanvasKeyboardDraw,
@@ -107,7 +115,7 @@ var main_timeline = [
     set_html_style,
     open_fullscreen,
     ins,
-    task1,task2,
+    task1,task2,task3,
     
 ]
 /* Launch jsPsych */
