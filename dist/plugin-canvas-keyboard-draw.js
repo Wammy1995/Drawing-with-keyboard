@@ -25,7 +25,7 @@ var jsPsychCanvasKeyboardDraw = (function (jspsych) {
           trial_duration: {
               type: jspsych.ParameterType.INT,
               pretty_name: "Trial duration",
-              default: 5000,
+              default: 2500,
           },
           /** If true, trial will end when subject makes a response. */
           response_ends_trial: {
@@ -165,6 +165,10 @@ var jsPsychCanvasKeyboardDraw = (function (jspsych) {
           var m_up = false;
           var tac = false;
           var tts = true;
+          var response = {
+              rt: null,
+              value: null,
+          };
           function dibujarTeclado(evento)
           {
              switch(evento.keyCode)
@@ -238,6 +242,7 @@ var jsPsychCanvasKeyboardDraw = (function (jspsych) {
              }
                 return shuzhi
              }
+
           function done()
           {
              papel.strokeStyle = 'blue';
@@ -279,6 +284,7 @@ var jsPsychCanvasKeyboardDraw = (function (jspsych) {
               var ds = Math.sqrt(Math.pow((newx-x_in),2)+Math.pow((newy-y_in),2))
               if (ds<pse){
                 tts = false; 
+                console.log(jishi)
                 // display_element.querySelector("#jspsych-html-button-response-button").style.backgroundColor="aliceblue";
               }else{
                 tts = true;
@@ -292,11 +298,7 @@ var jsPsychCanvasKeyboardDraw = (function (jspsych) {
               y=newy;
             },50)
           // store response
-          var response = {
-              rt: null,
-              value: null,
-          };
-          // function to end trial when it is time
+                    // function to end trial when it is time
           const end_trial = () => {
               // kill any remaining setTimeout handlers
               this.jsPsych.pluginAPI.clearAllTimeouts();

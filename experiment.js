@@ -115,7 +115,8 @@ var main_timeline = [
     set_html_style,
     open_fullscreen,
     ins,
-    task1,task2,task3,
+    task1,
+    // task2,task3,
     
 ]
 /* Launch jsPsych */
