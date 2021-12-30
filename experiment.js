@@ -84,18 +84,17 @@ var ins = {
 var task_a = {
     timeline: [{
         type: jsPsychCanvasKeyboardDraw,
-        data: jsPsych.timelineVariable('data'),
-        stimulus: jsPsych.timelineVariable('s'),
+        stimulus:function(){return jsPsych.timelineVariable('s')},
         x_speed:5,
         y_speed:5,
         pse:10,
         canvas_size:[600,600]
-    }],
+    },],
     timeline_variables: [
-        { data: { i: 1 }, s: [90,200,390,200,490,400,190,400] },
-        { data: { i: 2 }, s:[390,200,490,400,190,400,90,200] },
-        { data: { i: 3 }, s: [490,400,390,200,90,200,190,400] },
-        { data: { i: 4 }, s: [190,400,490,400,390,200,90,200] }
+        { s:[90,200,390,200,490,400,190,400] },
+        { s:[390,200,490,400,190,400,90,200] },
+        { s:[490,400,390,200,90,200,190,400] },
+        { s:[190,400,490,400,390,200,90,200] }
     ],
     randomize_order: true,
     post_trial_gap: 200
