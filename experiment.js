@@ -81,6 +81,27 @@ var ins = {
 
 //以下是图形生成，按顶点顺序依次写在[]内，pse是最后的允许误差范围，同时也是起始处圆点直径。x_speed和y_speed是移动速度
 
+var task_a = {
+    timeline: [{
+        type: jsPsychCanvasKeyboardDraw,
+        data: jsPsych.timelineVariable('data'),
+        stimulus: jsPsych.timelineVariable('s'),
+        x_speed:5,
+        y_speed:5,
+        pse:10,
+        canvas_size:[600,600]
+    }],
+    timeline_variables: [
+        { data: { i: 1 }, s: [90,200,390,200,490,400,190,400] },
+        { data: { i: 2 }, s:[390,200,490,400,190,400,90,200] },
+        { data: { i: 3 }, s: [490,400,390,200,90,200,190,400] },
+        { data: { i: 4 }, s: [190,400,490,400,390,200,90,200] }
+    ],
+    randomize_order: true,
+    post_trial_gap: 200
+
+}
+
 var task1 = {
     type:jsPsychCanvasKeyboardDraw,
     stimulus:[30,30,330,30,430,230,130,230],
@@ -115,7 +136,7 @@ var main_timeline = [
     set_html_style,
     open_fullscreen,
     ins,
-    task1,
+    task_a,
     // task2,task3,
     
 ]
